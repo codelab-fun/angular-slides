@@ -7,5 +7,15 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "angular-slides": {
+      "tags": []
+    },
+    "slides-test": {
+      "tags": []
+    },
+    "slides-test-e2e": {
+      "tags": []
+    }
+  }
 }

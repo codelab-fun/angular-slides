@@ -2,7 +2,156 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "angular-slides": {
+      "root": "libs/angular-slides",
+      "sourceRoot": "libs/angular-slides/src",
+      "projectType": "library",
+      "prefix": "angular-slides",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/angular-slides/tsconfig.lib.json",
+            "project": "libs/angular-slides/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-slides/tsconfig.lib.json",
+              "libs/angular-slides/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/angular-slides/jest.config.js",
+            "tsConfig": "libs/angular-slides/tsconfig.spec.json",
+            "setupFile": "libs/angular-slides/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "slides-test": {
+      "root": "apps/slides-test/",
+      "sourceRoot": "apps/slides-test/src",
+      "projectType": "application",
+      "prefix": "angular-slides",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/slides-test",
+            "index": "apps/slides-test/src/index.html",
+            "main": "apps/slides-test/src/main.ts",
+            "polyfills": "apps/slides-test/src/polyfills.ts",
+            "tsConfig": "apps/slides-test/tsconfig.app.json",
+            "assets": [
+              "apps/slides-test/src/favicon.ico",
+              "apps/slides-test/src/assets"
+            ],
+            "styles": ["apps/slides-test/src/styles.css"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/slides-test/src/environments/environment.ts",
+                  "with": "apps/slides-test/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "slides-test:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "slides-test:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "slides-test:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/slides-test/tsconfig.app.json",
+              "apps/slides-test/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/slides-test/jest.config.js",
+            "tsConfig": "apps/slides-test/tsconfig.spec.json",
+            "setupFile": "apps/slides-test/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "slides-test-e2e": {
+      "root": "apps/slides-test-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/slides-test-e2e/cypress.json",
+            "tsConfig": "apps/slides-test-e2e/tsconfig.e2e.json",
+            "devServerTarget": "slides-test:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "slides-test:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/slides-test-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -10,5 +159,6 @@
     },
     "defaultCollection": "@nrwl/schematics"
   },
-  "schematics": {}
+  "schematics": {},
+  "defaultProject": "angular-slides"
 }
