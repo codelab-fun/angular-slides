@@ -1,5 +1,5 @@
 {
-  "npmScope": "angular-slides",
+  "npmScope": "ng-slides",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
@@ -8,7 +8,7 @@
     "nx.json": "*"
   },
   "projects": {
-    "angular-slides": {
+    "ng-slides": {
       "tags": []
     },
     "slides-test": {

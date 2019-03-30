@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "angular-slides": ["libs/angular-slides/src/index.ts"]
+      "ng-slides": ["libs/ng-slides/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -3,25 +3,25 @@
   "version": 1,
   "newProjectRoot": "",
   "projects": {
-    "angular-slides": {
-      "root": "libs/angular-slides",
-      "sourceRoot": "libs/angular-slides/src",
+    "ng-slides": {
+      "root": "libs/ng-slides",
+      "sourceRoot": "libs/ng-slides/src",
       "projectType": "library",
-      "prefix": "angular-slides",
+      "prefix": "ng-slides",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "libs/angular-slides/tsconfig.lib.json",
-            "project": "libs/angular-slides/ng-package.json"
+            "tsConfig": "libs/ng-slideslib.json",
+            "project": "libs/ng-slidesackage.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/angular-slides/tsconfig.lib.json",
-              "libs/angular-slides/tsconfig.spec.json"
+              "libs/ng-slides/tsconfig.lib.json",
+              "libs/ng-slides/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
@@ -29,9 +29,9 @@
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "libs/angular-slides/jest.config.js",
-            "tsConfig": "libs/angular-slides/tsconfig.spec.json",
-            "setupFile": "libs/angular-slides/src/test-setup.ts"
+            "jestConfig": "libs/ng-slides/jest.config.js",
+            "tsConfig": "libs/ng-slides/tsconfig.spec.json",
+            "setupFile": "libs/ng-slides/src/test-setup.ts"
           }
         }
       },
@@ -41,7 +41,7 @@
       "root": "apps/slides-test/",
       "sourceRoot": "apps/slides-test/src",
       "projectType": "application",
-      "prefix": "angular-slides",
+      "prefix": "ng-slides",
       "schematics": {},
       "architect": {
         "build": {
@@ -160,5 +160,5 @@
     "defaultCollection": "@nrwl/schematics"
   },
   "schematics": {},
-  "defaultProject": "angular-slides"
+  "defaultProject": "slides-test"
 }

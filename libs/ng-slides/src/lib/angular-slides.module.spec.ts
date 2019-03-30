@@ -1,5 +1,5 @@
 import { async, TestBed } from '@angular/core/testing';
-import { AngularSlidesModule } from './angular-slides.module';
+import { AngularSlidesModule } from './ng-slides.module';
 
 describe('AngularSlidesModule', () => {
   beforeEach(async(() => {
