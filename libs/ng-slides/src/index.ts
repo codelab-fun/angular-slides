@@ -1,1 +1,1 @@
-export * from './lib/angular-slides.module';
+export * from './lib/slides.module';

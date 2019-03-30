@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { AngularSlidesModule } from './ng-slides.module';
+import { SlidesModule } from './slides.module';
 
-describe('AngularSlidesModule', () => {
+describe('SlidesModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [AngularSlidesModule]
+      imports: [SlidesModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(AngularSlidesModule).toBeDefined();
+    expect(SlidesModule).toBeDefined();
   });
 });

@@ -28,4 +28,4 @@ import { FullScreenModeService } from './full-screen-mode';
     FullScreenModeService
   ]
 })
-export class AngularSlidesModule { }
+export class SlidesModule { }
