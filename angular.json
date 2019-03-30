@@ -12,8 +12,8 @@
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "libs/ng-slideslib.json",
-            "project": "libs/ng-slidesackage.json"
+            "tsConfig": "libs/ng-slides/tsconfig.lib.json",
+            "project": "libs/ng-slides/package.json"
           }
         },
         "lint": {
