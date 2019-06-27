@@ -1,6 +1,6 @@
 import { Directive, HostListener, Optional } from '@angular/core';
 import { SlidesDeckComponent } from '../deck/deck.component';
-import { FullScreenModeService } from '../full-screen-mode';
+import { FullScreenModeService } from '../full-screen-mode/full-screen-mode.service';
 
 @Directive({
   selector: '[slideShortcuts]'

@@ -6,7 +6,7 @@ import { SlideDirective } from './slide/slide.directive';
 import { ShortcutsDirective } from './shortcuts/shortcuts.directive';
 import { SlidesRoutingDirective } from './routing/slides-routing.directive';
 import { SlidesArrowsComponent } from './arrows/slides-arrows.component';
-import { FullScreenModeService } from './full-screen-mode';
+import { FullScreenModeService } from './full-screen-mode/full-screen-mode.service';
 
 @NgModule({
   declarations: [
